@@ -1,0 +1,9 @@
+name: Show User Module
+description: Displays the logged in user name in a block.
+package: Custom
+
+type: module
+core: 8.x
+
+dependencies:
+  - drupal:block

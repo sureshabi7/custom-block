@@ -1,0 +1,20 @@
+<?php
+/**
+ * @file
+ * Code for the Chad module.
+ */
+use Drupal\Core\Routing\RouteMatchInterface;
+
+const VARIABLES = 'variables';
+const TEMPLATE = 'template';
+
+function article_theme($existing, $type, $theme, $path) {
+  return [
+    'article' => [
+      VARIABLES => ['data' => NULL],
+      TEMPLATE => 'block/block--article',
+    ]
+    ];
+}
+
+?>
