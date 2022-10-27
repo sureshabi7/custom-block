@@ -16,7 +16,7 @@ node {
     
     stage('Clone Repo') { 
       // Get some code from a GitHub repository
-      git url:'https://github.com/sureshabi7/dockerapp',branch:'Master' //update your forked repo
+      git url:'hhttps://github.com/sureshabi7/custom-block.git',branch:'master' //update your forked repo
       // Get the Maven tool.
       // ** NOTE: This 'maven-3.5.2' Maven tool must be configured
       // **       in the global configuration.           
@@ -35,7 +35,7 @@ node {
 	//push image to remote repository , in your jenkins you have to create the global credentials similar to the 'dockerHub' (credential ID)
     stage('Push Image to Remote Repo'){
 	 echo "Docker Image Tag Name ---> ${dockerImageTag}"
-	     docker.withRegistry('', 'dockerHub') {
+	     docker.withRegistry('', 'sureshdrupal') {
              dockerImage.push("${env.BUILD_NUMBER}")
              dockerImage.push("latest")
             }
