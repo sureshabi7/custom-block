@@ -16,7 +16,7 @@ node {
     
     stage('Clone Repo') { 
       // Get some code from a GitHub repository
-      git url:'hhttps://github.com/sureshabi7/custom-block.git',branch:'master' //update your forked repo
+      git url:'https://github.com/sureshabi7/custom-block.git',branch:'master' //update your forked repo
       // Get the Maven tool.
       // ** NOTE: This 'maven-3.5.2' Maven tool must be configured
       // **       in the global configuration.           
