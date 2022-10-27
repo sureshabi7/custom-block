@@ -9,6 +9,9 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN npm install
+
+RUN mkdir -p /usr/share/maven
+RUN chmod 777 /usr/share/maven
 # If you are building your code for production
 # RUN npm ci --only=production
 
