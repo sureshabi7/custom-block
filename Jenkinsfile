@@ -25,7 +25,7 @@ node {
   
     stage('Build Project') {
       // build project via maven
-      sh "chmod +x -R ${mvnHome}"
+      sh "sudo chmod u+x ${mvnHome}"
       sh "'${mvnHome}' clean install"
     }
 		
