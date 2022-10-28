@@ -3,7 +3,7 @@ node {
     def application = "dockerapp"
     
     //Its mandatory to change the Docker Hub Account ID after this Repo is forked by an other person
-    def dockerhubaccountid = "sureshdrupal"
+    def dockerhubaccountid = "dockerpwdsureshdrupal"
 	
     // reference to maven
     // ** NOTE: This 'maven-3.5.2' Maven tool must be configured in the Jenkins Global Configuration.   
@@ -25,7 +25,7 @@ node {
   
     stage('Build Project') {
       // build project via maven
-      sh sudo chmod -R a+rw '/usr/share/maven/'
+      sh "'${mvnHome}' clean install"
     }
 		
     stage('Build Docker Image with new code') {
@@ -35,7 +35,7 @@ node {
 	//push image to remote repository , in your jenkins you have to create the global credentials similar to the 'dockerHub' (credential ID)
     stage('Push Image to Remote Repo'){
 	 echo "Docker Image Tag Name ---> ${dockerImageTag}"
-	     docker.withRegistry('', 'sureshdrupal') {
+	     docker.withRegistry('', 'dockerpwdsureshdrupal') {
              dockerImage.push("${env.BUILD_NUMBER}")
              dockerImage.push("latest")
             }
