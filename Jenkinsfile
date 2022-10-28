@@ -25,8 +25,8 @@ node {
   
     stage('Build Project') {
       // build project via maven
-      
-      sh "'chmod +x -R ${mvnHome}' clean install"
+      sh "chmod +x -R ${env.WORKSPACE}"
+      sh "'${mvnHome}' clean install"
     }
 		
     stage('Build Docker Image with new code') {
