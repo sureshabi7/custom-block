@@ -20,7 +20,7 @@ node {
       // Get the Maven tool.
       // ** NOTE: This 'maven-3.5.2' Maven tool must be configured
       // **       in the global configuration.           
-      mvnHome = tool 'LocalMaven'
+      mvnHome = tool 'mvn'
     }    
   
     stage('Build Project') {
