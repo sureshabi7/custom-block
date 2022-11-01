@@ -7,7 +7,7 @@ pipeline {
 
     agent any
     stages {
-            stage('Cloning our Git') {
+            stage('Cloning our repo') {
                 steps {
                 git 'git@github.com:sureshabi7/custom-block.git'
                 }
